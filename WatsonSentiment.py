@@ -24,16 +24,29 @@ natural_language_understanding = NaturalLanguageUnderstandingV1(
 	password=credentials['password'],
 	version=credentials['version'])
 
-def getSentiment(text):
-	response = natural_language_understanding.analyze(
-		text=text,
-		features=[
-			Features.Sentiment(
-			# Sentiment options
-				targets=[
-					"bitcoin"
-				]
-			)
-		]
-	)
+def getSentiment(text=None, url=None):
+	if(url=None):
+		response = natural_language_understanding.analyze(
+			text=text,
+			features=[
+				Features.Sentiment(
+				# Sentiment options
+					targets=[
+						"bitcoin"
+					]
+				)
+			]
+		)
+	else:
+		response = natural_language_understanding.analyze(
+			url=url,
+			features=[
+				Features.Sentiment(
+				# Sentiment options
+					targets=[
+						"bitcoin"
+					]
+				)
+			]
+		)
 	return json.dumps(response, indent=2)
