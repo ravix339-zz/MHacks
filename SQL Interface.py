@@ -33,6 +33,9 @@ def SentimentalitySendAndReceive():
             cursor.execute("UPDATE AnalyzedData SET Sent = Sent + {sent}, numRecords = numRecords + 1, AvgSent = Sent / numRecords, Score = {score}, Mag = {mag} WHERE startdate = {startdate}".format(
                 sent=sentScore[0]*sentScore[1],startdate=text[0], score=sentScore[0], mag=sentScore[1]))
             cursor.commit()
+    cursor = connection.cursor()
+    cursor.execute("DELETE * FROM AnalyzedData WHERE Sent=NULL")
+    cursor.commit()
 
 def MLTrainingSend():
     cursor = connection.cursor()
