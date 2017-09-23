@@ -1,4 +1,6 @@
 import {NavLink} from 'react-router-dom';
+import InputRange from 'react-input-range';
+import moment from 'moment';
 
 class App extends React.Component {
 	constructor(props) {
@@ -42,6 +44,11 @@ class App extends React.Component {
 					<li><NavLink to={'/sent'} activeClassName="active">Sentiment</NavLink></li>
 					<li><NavLink to={'/corr'} activeClassName="active">Correlation</NavLink></li>
 					</ul>
+					<InputRange
+				        maxValue={20}
+				        minValue={0}
+				        value={this.state.sVal}
+				        onChange={value => this.setState({ sVal: value })} />
 					{children}
 				</div>
 		)
