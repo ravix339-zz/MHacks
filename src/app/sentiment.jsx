@@ -17,7 +17,7 @@ class Sentiment extends React.Component {
 		        y: [6, 2, 3],     // #scatter-y
 		        marker: {         // marker is an object, valid marker keys: #scatter-marker
 		          	color: 'rgb(16, 32, 77)' // more about "marker.color": #scatter-marker-color
-	        	}	
+	        	}
 	      	},
 	      	{
 		        type: 'bar',      // all "bar" chart attributes: #bar

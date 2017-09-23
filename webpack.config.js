@@ -30,6 +30,8 @@ module.exports = {
 		ExtractSASS
 	],
 
+    devtool: 'cheap-module-source-map',
+
 	module: {
 		loaders: [{
 			test: /\.jsx?$/,
