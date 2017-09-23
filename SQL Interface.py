@@ -44,5 +44,3 @@ def MLTrainingSend():
     while row:
 #        CloudTrain.TrainData(row[0], row[1])
         row = cursor.fetchone()
-
-SentimentalitySendAndReceive()
