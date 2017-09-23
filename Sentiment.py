@@ -16,8 +16,9 @@ def getSentiment(url):
 	document = types.Document(
 	    content=html.content,
 	    type="HTML")
-
+	print(html.content)
 	# Detects the sentiment of the text
 	sentiment = client.analyze_sentiment(document=document).document_sentiment
 
 	print('Sentiment: {}, {}'.format(sentiment.score, sentiment.magnitude))
+	return(sentiment.score, sentiment.magnitude)
