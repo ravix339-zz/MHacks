@@ -11,11 +11,10 @@ credentials = GoogleCredentials.get_application_default()
 # Instantiates a client
 client = language.LanguageServiceClient()
 
-def getSentiment(url):
-	html = requests.get(url)
+def getSentiment(text):
 	document = types.Document(
-	    content=html.content,
-	    type="HTML")
+	    content=text,
+	    type=Document.Type.PLAIN_TEXT)
 	# Detects the sentiment of the text
 	sentiment = client.analyze_sentiment(document=document).document_sentiment
 

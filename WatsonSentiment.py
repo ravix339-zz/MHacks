@@ -24,9 +24,9 @@ natural_language_understanding = NaturalLanguageUnderstandingV1(
 	password=credentials['password'],
 	version=credentials['version'])
 
-def getSentiment(url):
+def getSentiment(text):
 	response = natural_language_understanding.analyze(
-		url=url,
+		text=text,
 		features=[
 			Features.Sentiment(
 			# Sentiment options
