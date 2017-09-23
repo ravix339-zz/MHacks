@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="77f8784c-e4a5-4ee8-8ff8-5971dddcc36d" name="Default" comment="alien success">
+    <list default="true" id="77f8784c-e4a5-4ee8-8ff8-5971dddcc36d" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Aylien.py" afterPath="$PROJECT_DIR$/Aylien.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -12,7 +13,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/MHacksX$Aylien.coverage" NAME="Aylien Coverage Results" MODIFIED="1506181334398" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MHacksX$Aylien.coverage" NAME="Aylien Coverage Results" MODIFIED="1506188622905" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MHacksX$WatsonSentiment.coverage" NAME="WatsonSentiment Coverage Results" MODIFIED="1506151858061" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MHacksX$EventReg.coverage" NAME="EventReg Coverage Results" MODIFIED="1506177742550" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MHacksX$Sentiment.coverage" NAME="Sentiment Coverage Results" MODIFIED="1506148195044" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -39,6 +40,7 @@
               <caret line="17" column="20" lean-forward="false" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
               <folding>
                 <element signature="e#42#75#0" expanded="true" />
+                <marker date="1506188655704" expanded="true" signature="716:838" ph="..." />
               </folding>
             </state>
           </provider>
@@ -51,6 +53,7 @@
               <caret line="16" column="24" lean-forward="false" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
+                <marker date="1506188655718" expanded="true" signature="1135:1176" ph="..." />
               </folding>
             </state>
           </provider>
@@ -71,8 +74,8 @@
       <file leaf-file-name="Aylien.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Aylien.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="751">
-              <caret line="23" column="41" lean-forward="true" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
+            <state relative-caret-position="711">
+              <caret line="40" column="43" lean-forward="false" selection-start-line="40" selection-start-column="42" selection-end-line="40" selection-end-column="43" />
               <folding>
                 <element signature="e#0#22#0" expanded="true" />
               </folding>
@@ -172,7 +175,10 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.gitignore</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Sentiment.py</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/URL Retrieval.py</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/WatsonSentiment.py</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Created" />
@@ -180,12 +186,17 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="CREATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.gitignore</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/basic_plot.py</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/bitcoin_price_to_sql.py</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/data/bitcoin_price_data.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/data/bitcoin_weekly_data.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/price_parser.py</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/package.json</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/app/app.jsx</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/app/app.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/app/bundle.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/app/correlation.jsx</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/app/global.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/app/index.jsx</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/app/prediction.jsx</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/app/sentiment.jsx</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/index.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/webpack.config.js</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Deleted" />
@@ -580,7 +591,14 @@
       <option name="project" value="LOCAL" />
       <updated>1506181390967</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="alien success">
+      <created>1506181460460</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1506181460460</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TodoView">
@@ -600,7 +618,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.8158792" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43692157" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32976133" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -642,6 +660,7 @@
           <caret line="17" column="20" lean-forward="false" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
           <folding>
             <element signature="e#42#75#0" expanded="true" />
+            <marker date="1506188655704" expanded="true" signature="716:838" ph="..." />
           </folding>
         </state>
       </provider>
@@ -652,6 +671,7 @@
           <caret line="16" column="24" lean-forward="false" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
+            <marker date="1506188655718" expanded="true" signature="1135:1176" ph="..." />
           </folding>
         </state>
       </provider>
@@ -671,7 +691,7 @@
         <state relative-caret-position="520">
           <caret line="18" column="30" lean-forward="false" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
           <folding>
-            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#0#15#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -690,6 +710,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#42#75#0" expanded="true" />
+            <marker date="1506188655704" expanded="true" signature="716:838" ph="..." />
           </folding>
         </state>
       </provider>
@@ -700,6 +721,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#42#75#0" expanded="true" />
+            <marker date="1506188655704" expanded="true" signature="716:838" ph="..." />
           </folding>
         </state>
       </provider>
@@ -710,6 +732,7 @@
           <caret line="17" column="20" lean-forward="false" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
           <folding>
             <element signature="e#42#75#0" expanded="true" />
+            <marker date="1506188655704" expanded="true" signature="716:838" ph="..." />
           </folding>
         </state>
       </provider>
@@ -720,6 +743,7 @@
           <caret line="16" column="24" lean-forward="false" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
+            <marker date="1506188655718" expanded="true" signature="1135:1176" ph="..." />
           </folding>
         </state>
       </provider>
@@ -744,7 +768,7 @@
         <state relative-caret-position="720">
           <caret line="18" column="30" lean-forward="false" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
           <folding>
-            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#0#15#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -761,8 +785,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Aylien.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="751">
-          <caret line="23" column="41" lean-forward="true" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
+        <state relative-caret-position="711">
+          <caret line="40" column="43" lean-forward="false" selection-start-line="40" selection-start-column="42" selection-end-line="40" selection-end-column="43" />
           <folding>
             <element signature="e#0#22#0" expanded="true" />
           </folding>
