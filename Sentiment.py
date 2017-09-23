@@ -5,9 +5,11 @@ from google.cloud.language import types
 
 import requests
 
+from oauth2client.client import GoogleCredentials
+credentials = GoogleCredentials.get_application_default()
+
 # Instantiates a client
 client = language.LanguageServiceClient()
-
 
 def getSentiment(url):
 	html = requests.get(url)
@@ -18,5 +20,4 @@ def getSentiment(url):
 	# Detects the sentiment of the text
 	sentiment = client.analyze_sentiment(document=document).document_sentiment
 
-	print('Text: {}'.format(text))
 	print('Sentiment: {}, {}'.format(sentiment.score, sentiment.magnitude))
