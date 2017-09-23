@@ -18,8 +18,8 @@ next_date = get_next_week(start_date)
 while next_date < datetime.date.today():
     start_price = json_data['bpi'][str(start_date)]
     end_price = json_data['bpi'][str(next_date)]
-    weekly_data[str(i)] = {'Delta Price': end_price - start_price}
-    weekly_data[str(i)].update({'Final Price': end_price})
+    weekly_data[str(start_date)] = {'Delta Price': end_price - start_price}
+    weekly_data[str(start_date)].update({'Final Price': end_price})
     i = i + 1
     start_date = next_date
     next_date = get_next_week(start_date)
