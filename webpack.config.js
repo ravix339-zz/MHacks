@@ -45,6 +45,11 @@ module.exports = {
 				loader: ExtractSASS.extract(['css-loader', 'sass-loader']),
 				include: Path.join(__dirname, './src/app/'),
 				exclude: Path.join(__dirname, './node_modules/')
+			}, {
+				test: /\.css$/,
+				loader: ExtractSASS.extract(['style-loader', 'css-loader', 'sass-loader']),
+				include: Path.join(__dirname, './src/app/'),
+				exclude: Path.join(__dirname, './node_modules/')
 			}
 		]
 	},
