@@ -9,18 +9,11 @@ from bs4 import BeautifulSoup
 URL= 'https://www.google.com/search?q=bitcoin&tbs=cdr:1,cd_min:{startdate},cd_max:{stopdate}&tbm=nws&ei=UfXFWZC8EYLGjwTWyofoBA&start={searchresultnumber}&sa=N&biw=1829&bih=899&dpr=1.75'
 #2010-07-18
 def prog():
-<<<<<<< HEAD
     start_date = date(2013, 9, 15)
     while start_date < date(2015, 11, 15):#datetime.now().date():
         print(start_date, min(start_date + timedelta(days=7), datetime.now().date()))
 
         with open("C:\\Users\\Ravi\\Desktop\\URLs\\" + str(start_date) + ".txt", 'w+') as file:
-=======
-    start_date = date(2011, 7, 3)
-    while start_date < date(2013, 9, 8):#datetime.now().date():
-        print(start_date, min(start_date + timedelta(days=7), datetime.now().date()))
-        with (open(str(start_date)+".txt", 'w+')) as file:
->>>>>>> c26b05fb7d11e41f39fbf666910183dc249cf07a
             for page_number in range(3):
                 response = requests.get(URL.format(startdate=start_date.strftime("%m/%d/20%y"), stopdate=min(start_date + timedelta(days=7), datetime.now().date()).strftime("%m/%d/20%y"), searchresultnumber=str(page_number*10)))
                 #print(URL.format(startdate=start_date.strftime("%m/%d/20%y"), stopdate=min(start_date + timedelta(days=7), datetime.now().date()).strftime("%m/%d/20%y"), searchresultnumber=str(page_number*10)))
@@ -34,8 +27,4 @@ def prog():
                     file.write(link+'\n')
         start_date = start_date + timedelta(days=8)
         # print(start_date,"-", min(start_date + timedelta(days=7), datetime.now().date()), ": ",len(something))
-<<<<<<< HEAD
-=======
-# print(timeit.timeit(prog()))
->>>>>>> c26b05fb7d11e41f39fbf666910183dc249cf07a
 prog()

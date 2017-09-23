@@ -12,13 +12,7 @@ cnxn = pyodbc.connect('Driver={ODBC Driver 13 for SQL Server};Server=tcp:mhacks.
 #cursor.execute("DROP TABLE AnalyzedData")
 #cursor.commit()
 cursor = cnxn.cursor()
-<<<<<<< HEAD
 cursor.execute("CREATE TABLE AnalyzedData ( Interval nvarchar(255), Sent REAL, NumRecords INT, AVGSent Real, FinalPrice REAL, Delta REAL, Score REAL, Mag REAL )")
-=======
-cursor.execute("DROP TABLE AnalyzedData")
-cursor = cnxn.cursor()
-cursor.execute("CREATE TABLE AnalyzedData ( Interval int, Sent REAL, NumRecords INT, AVGSent Real, FinalPrice REAL, Delta REAL )")
->>>>>>> c26b05fb7d11e41f39fbf666910183dc249cf07a
 cursor.commit()
 with open(data_file) as json_data:
     json_data = json.load(json_data)
