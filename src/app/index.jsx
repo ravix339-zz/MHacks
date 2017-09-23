@@ -9,12 +9,11 @@ import './bundle.scss';
 
 ReactDOM.render(
 	<BrowserRouter>
-	<App>
-     <Redirect from="/" to="/main"/>
-     <Route path="/main" component={Prediction} />
-     <Route path="/sent" component={Sentiment} />
-     <Route path="/corr" component={Correlation} />
-     </App>
+		<App>
+			<Route path="/main" component={Prediction} />
+			<Route path="/sent" component={Sentiment} />
+			<Route path="/corr" component={Correlation} />
+  		</App>
   	</BrowserRouter>,
 
 	document.getElementById('react-root')
