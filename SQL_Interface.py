@@ -17,8 +17,6 @@ def LyndonShiAbandonedUs():
     files = glob.glob("D:\\Code\\Python\\Text\\*.txt")
     for fileName in files:
         print(fileName)
-        if fileName.split('\\')[-1] < "2016-05-10 (1).txt":
-            continue
         articles =[]
         with open(fileName,'r', encoding='utf-8', errors='ignore') as fileRead:
             try:

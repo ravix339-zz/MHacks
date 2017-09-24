@@ -16,9 +16,9 @@ class Sentiment extends React.Component {
 		        mode: "lines",
 		        name: "Sentiment By Time",
 		        x: this.context.data ?
-                JSON.parse(this.context.data.weeks).slice(0, sVal) : "2010-7-18",    // more about "x": #scatter-x
+                JSON.parse(this.context.data.weeks).slice(0, this.context.sVal) : "2010-7-18",    // more about "x": #scatter-x
 		        y: this.context.data ?
-                JSON.parse(this.context.data.Sentiments).slice(0, sVal) : 0,     // #scatter-y
+                JSON.parse(this.context.data.Sentiments).slice(0, this.context.sVal) : 0,     // #scatter-y
 		        line: { color: '#17BECF' }
 	    };
 	    let layout = {                     // all "layout" attributes: #layout

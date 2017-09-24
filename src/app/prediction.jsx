@@ -16,8 +16,8 @@ class Prediction extends React.Component {
             mode: "lines",
             name: 'Predicted',
             x: this.context.data ?
-            JSON.parse(this.context.data.weeks).slice(0, sVal) : "2010-7-18",
-            y: this.context.data ? JSON.parse(this.context.data.Prices).slice(0, sVal) : 0,
+            JSON.parse(this.context.data.weeks).slice(0, this.context.sVal) : "2010-7-18",
+            y: this.context.data ? JSON.parse(this.context.data.Prices).slice(0, this.context.sVal) : 0,
             line: { color: '#17BECF' }
         };
         let actual = {
@@ -25,8 +25,8 @@ class Prediction extends React.Component {
             mode: "lines",
             name: 'Actual',
             x: this.context.data ?
-            JSON.parse(this.context.data.weeks).slice(0, sVal) : "2010-7-18",
-            y: this.context.data ? JSON.parse(this.context.data.Prices).slice(0, sVal) : 0,
+            JSON.parse(this.context.data.weeks).slice(0, this.context.sVal) : "2010-7-18",
+            y: this.context.data ? JSON.parse(this.context.data.Prices).slice(0, this.context.sVal) : 0,
             line: { color: '#7F7F7F' }
         };
         let layout = { // all "layout" attributes: #layout
