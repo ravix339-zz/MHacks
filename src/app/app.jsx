@@ -1,6 +1,6 @@
 import {NavLink} from 'react-router-dom';
 import InputRange from 'react-input-range';
-import PropTypes from 'prop-types'; // ES6 
+import PropTypes from 'prop-types'; // ES6
 import moment from 'moment';
 // import moment from 'moment';
 
@@ -21,6 +21,7 @@ class App extends React.Component {
 		}).then((res) => {
 			try {
        			const data = res.json();
+                console.log(data);
                 return data;
         	// Do your JSON handling here
     		} catch(err) {
@@ -28,6 +29,7 @@ class App extends React.Component {
         		return null
     		}
 		}).then( (data2) =>{
+                console.log(data2);
 				this.setState({data: data2})
 		})
 	}
@@ -36,7 +38,7 @@ class App extends React.Component {
 	}
   	getChildContext() {
     	return {
-      		data: this.state.data, 
+      		data: this.state.data,
       		sVal: this.state.sVal
       	}
   	}

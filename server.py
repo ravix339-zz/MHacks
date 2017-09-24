@@ -8,38 +8,34 @@ __location__ = os.path.realpath(
 
 @app.route('/data',  methods=["GET"])
 def indexs():
-	connection = pyodbc.connect('Driver={ODBC Driver 13 for SQL Server};Server=tcp:mhacks.database.windows.net,1433;Database=mhacks;Uid=ajaykumar@mhacks;Pwd=ILoveAjay!;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;')
-	cursor = connection.cursor()
-	cursor.execute("SELECT [startdate], [FinalPrice], [Delta], [Mag] FROM AnalyzedData")
-	weeks = []
-	prices =[]
-	delta=[]
-	sentiments=[]
-	row = cursor.fetchone()
-	while row:
-		weeks.append(row[0])
-		prices.append(row[1])
-		delta.append(row[2])
-		prices.append(row[3])
-		sentiments.append(row[4])
-		row = cursor.fetchone()
-	return json.dumps({"weeks": json.dumps(weeks),
-			"Prices": json.dumps(prices),
-			"Sentiments": json.dumps(sentiments),
-			"Delta": json.dumps(delta)
-			})
+    connection = pyodbc.connect('Driver={ODBC Driver 13 for SQL Server};Server=tcp:mhacks.database.windows.net,1433;Database=mhacks;Uid=ajaykumar@mhacks;Pwd=ILoveAjay!;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;')
+    cursor = connection.cursor()
+    cursor.execute("SELECT [startdate], [FinalPrice], [Delta], [Mag] FROM AnalyzedData WHERE [Mag] != [Score]")
+    weeks = []
+    prices =[]
+    delta=[]
+    sentiments=[]
+    row = cursor.fetchone()
+    while row:
+    	weeks.append(row[0])
+    	prices.append(row[1])
+    	delta.append(row[2])
+    	sentiments.append(row[3])
+    	row = cursor.fetchone()
+    zipall = zip(weeks, prices, delta, sentiments)
+    zip2 = sorted(zip(weeks, prices, delta, sentiments))
+    weeks, prices, delta, sentiments = [list(t) for t in zip(*zip2)]
+    return json.dumps({"weeks": json.dumps(weeks),
+    		"Prices": json.dumps(prices),
+    		"Sentiments": json.dumps(sentiments),
+    		"Delta": json.dumps(delta)
+    		})
+
 def shutdown_server():
 	func = request.environ.get('werkzeug.server.shutdown')
 	if func is None:
 		raise RuntimeError('Not running with the Werkzeug Server')
 	func()
-
-@app.route('/stop')
-def stop():
-	if(not(proc is None)):
-	 	proc.sendcontrol('c')
-	# shutdown_server()
-	return 'stopped'
 
 @app.route('/static/<path:filename>')
 def send_static(filename):
