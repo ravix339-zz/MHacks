@@ -17,7 +17,7 @@ def getSentiment(text=None, url=None):
 	if(url==None):
 		document = types.Document(
 		    content=text,
-		    type=enums.Document.Type.PLAIN_TEXT)
+		    type='PLAIN_TEXT')
 		# Detects the sentiment of the text
 		result = client.analyze_sentiment(document=document).document_sentiment
 	else:

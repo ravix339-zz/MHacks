@@ -17,16 +17,17 @@ def LyndonShiAbandonedUs():
     files = glob.glob("D:\\Code\\Python\\Text\\*.txt")
     for fileName in files:
         print(fileName)
+        if fileName.split('\\')[-1] < "2016-05-10 (1).txt":
+            continue
         articles =[]
-        with open(fileName,'r', encoding='utf-8') as fileRead:
+        with open(fileName,'r', encoding='utf-8', errors='ignore') as fileRead:
             try:
                 articles = fileRead.read().split('\r\n\r\n\r\n\r\n\r\n')
             except Exception as e:
                 print(e)
-                print("Fuck you")
         for article in articles:
             global prev_file_name, score_list, mag_list
-            sentScore= GS.getSentiment(text=article)
+            sentScore= GS.getSentiment(text= article[1:-1])
             score_list.append(float(sentScore[0]))
             mag_list.append(float(sentScore[1]))
             if fileName[:11] != prev_file_name:
