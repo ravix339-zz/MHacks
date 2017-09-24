@@ -17,7 +17,7 @@ with open(price_in_file) as json_data:
 
 weekly_data = {}
 i = 0
-start_date = datetime.date(2010, 7, 18)
+start_date = datetime.date(2015, 11, 24)
 next_date = get_next_week(start_date)
 while next_date < datetime.date.today():
     start_price = json_data['bpi'][str(start_date)]

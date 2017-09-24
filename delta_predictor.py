@@ -25,8 +25,8 @@ import pandas as pd
 from six.moves import urllib
 import tensorflow as tf
 
-training_file = 'data/table_training_data.csv'
-testing_file = 'data/table_testing_data.csv'
+training_file = 'C:\\Users\\Ravi\\Desktop\\idk.csv'
+testing_file = 'C:\\Users\\Ravi\\Desktop\\idk.csv'
 CSV_COLUMNS = ["sentiment", "delta_price"]
 
 # Continuous base columns.
