@@ -1,8 +1,14 @@
 import pyodbc
 import glob
 import Sentiment as GS
+import numpy as np
 
 connection = pyodbc.connect('Driver={ODBC Driver 13 for SQL Server};Server=tcp:mhacks.database.windows.net,1433;Database=mhacks;Uid=ajaykumar@mhacks;Pwd=ILoveAjay!;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;')
+
+prev_file_name = ""
+score_list = []
+mag_list = []
+
 def Execute(query):
     cursor = connection.cursor()
     cursor.execute(query)
@@ -19,11 +25,19 @@ def LyndonShiAbandonedUs():
                 print(e)
                 print("Fuck you")
         for article in articles:
+            global prev_file_name, score_list, mag_list
             sentScore= GS.getSentiment(text=article)
-            cursor = connection.cursor()
-            cursor.execute("UPDATE AnalyzedData SET Score = {score}, Mag = {mag} WHERE startdate = {startdate}".format(
-                startdate="".join(fileName.split('\\')[-1][:-4].split('-')), score=sentScore[0], mag=sentScore[1]))
-            cursor.commit()
+            if fileName[:11] == prev_file_name:
+                score_list.append(sentScore[0])
+                mag_list.append(sentScore[1])
+            else:
+                cursor = connection.cursor()
+                cursor.execute("UPDATE AnalyzedData SET Score = {score}, Mag = {mag} WHERE startdate = {startdate}".format(
+                    startdate="".join(fileName.split('\\')[-1][:11].split('-')), score=np.mean(score_list), mag=np.mean(mag_list)))
+                cursor.commit()
+                score_list = []
+                mag_list = []
+            prev_file_name = fileName[:11]
 
 LyndonShiAbandonedUs()
 
