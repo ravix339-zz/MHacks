@@ -2,7 +2,7 @@ import createPlotlyComponent from 'react-plotlyjs';
 //See the list of possible plotly bundles at https://github.com/plotly/plotly.js/blob/master/dist/README.md#partial-bundles or roll your own
 import Plotly from '../../node_modules/plotly.js/dist/plotly-cartesian';
 const PlotlyComponent = createPlotlyComponent(Plotly);
-import PropTypes from 'prop-types'; // ES6 
+import PropTypes from 'prop-types'; // ES6
 
 class Prediction extends React.Component {
     constructor(props) {
@@ -15,16 +15,18 @@ class Prediction extends React.Component {
             type: "scatter",
             mode: "lines",
             name: 'Predicted',
-            x: this.context.data ? JSON.parse(this.context.data.weeks) : "2010-7-18",
-            y: this.context.data ? JSON.parse(this.context.data.Prices) : 0,
+            x: this.context.data ?
+            JSON.parse(this.context.data.weeks).slice(0, sVal) : "2010-7-18",
+            y: this.context.data ? JSON.parse(this.context.data.Prices).slice(0, sVal) : 0,
             line: { color: '#17BECF' }
         };
         let actual = {
             type: "scatter",
             mode: "lines",
             name: 'Actual',
-            x: this.context.data ? JSON.parse(this.context.data.weeks) : "2010-7-18",
-            y: this.context.data ? JSON.parse(this.context.data.Prices) : 0,
+            x: this.context.data ?
+            JSON.parse(this.context.data.weeks).slice(0, sVal) : "2010-7-18",
+            y: this.context.data ? JSON.parse(this.context.data.Prices).slice(0, sVal) : 0,
             line: { color: '#7F7F7F' }
         };
         let layout = { // all "layout" attributes: #layout
@@ -38,7 +40,7 @@ class Prediction extends React.Component {
             displayModeBar: false
         };
         let plot = this.context.data ? <PlotlyComponent className="whatever" data={[predicted, actual]} layout={ layout } config={ config } /> : null
-        return ( 
+        return (
         	<div className = "plot" > { plot } </div>
         );
     }
