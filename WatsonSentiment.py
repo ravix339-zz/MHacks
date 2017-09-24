@@ -49,4 +49,4 @@ def getSentiment(text=None, url=None):
 				)
 			]
 		)
-	return json.dumps(response, indent=2)
+	return json.dumps(response['sentiment']['document']['score'], indent=2)

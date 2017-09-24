@@ -10,7 +10,7 @@ class App extends React.Component {
 		this.state = {
 			sVal: 0,
 			data: null,
-			weeks: moment().week() - (moment([2012, 7, 1]).week()) + 6 + (moment().year() - (moment([2012, 7, 1]).year()))*52
+			weeks: +moment().diff(moment("2015-12-1"), 'w')
 		}
 		this.onChange = this.onChange.bind(this);
 	}
@@ -46,6 +46,7 @@ class App extends React.Component {
 
 
 	render() {
+        console.log(moment("2017-9-24").diff(moment("2015-12-1")))
 		return (
 				<div id='content'>
 					<ul>
@@ -55,7 +56,7 @@ class App extends React.Component {
 					</ul>
 					<div id="slider-container">
 					<InputRange
-						formatLabel={value => `week of ${(moment([2012,6,1]).add(parseInt(value), 'w')).format('YYYY-MM-DD').toString()}`}
+						formatLabel={value => `week of ${(moment("2015-12-1").add(parseInt(value), 'w')).format('YYYY-MM-DD').toString()}`}
 				        maxValue={this.state.weeks}
 				        minValue={0}
 				        value={this.state.sVal}

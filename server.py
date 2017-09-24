@@ -10,20 +10,22 @@ __location__ = os.path.realpath(
 def indexs():
     connection = pyodbc.connect('Driver={ODBC Driver 13 for SQL Server};Server=tcp:mhacks.database.windows.net,1433;Database=mhacks;Uid=ajaykumar@mhacks;Pwd=ILoveAjay!;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;')
     cursor = connection.cursor()
-    cursor.execute("SELECT [startdate], [FinalPrice], [Delta], [Mag] FROM AnalyzedData WHERE [Mag] != [Score]")
+    cursor.execute("SELECT [startdate], [FinalPrice], [Delta], [Score] FROM AnalyzedData WHERE [Delta] != [FinalPrice]")
     weeks = []
     prices =[]
     delta=[]
     sentiments=[]
     row = cursor.fetchone()
     while row:
-    	weeks.append(row[0])
-    	prices.append(row[1])
-    	delta.append(row[2])
-    	sentiments.append(row[3])
-    	row = cursor.fetchone()
-    zipall = zip(weeks, prices, delta, sentiments)
-    zip2 = sorted(zip(weeks, prices, delta, sentiments))
+        weeks.append('-'.join([row[0][:4],row[0][4:6],row[0][6:]]))
+        prices.append(row[1])
+        delta.append(row[2])
+        sentiments.append(row[3])
+        row = cursor.fetchone()
+    zipall = list(zip(weeks, prices, delta, sentiments))
+    print(zipall)
+    zip2 = sorted(list(zip(weeks, prices, delta, sentiments)), key=lambda t: t[0])
+    print(zip2)
     weeks, prices, delta, sentiments = [list(t) for t in zip(*zip2)]
     return json.dumps({"weeks": json.dumps(weeks),
     		"Prices": json.dumps(prices),

@@ -18,7 +18,7 @@ class Correlation extends React.Component {
 		        x: this.context.data ?
                 JSON.parse(this.context.data.Sentiments).slice(0, this.context.sVal) : 0,    // more about "x": #scatter-x
 		        y: this.context.data ?
-                JSON.parse(this.context.data.Prices).slice(0, this.context.sVal) : 0,     // #scatter-y
+                JSON.parse(this.context.data.Delta).slice(0, this.context.sVal) : 0,     // #scatter-y
 		        marker: { color: '#17BECF' }
 	    };
 	    let layout = {                     // all "layout" attributes: #layout
