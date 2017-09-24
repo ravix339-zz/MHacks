@@ -2,10 +2,12 @@
 from google.cloud import language
 from google.cloud.language import enums
 from google.cloud.language import types
+import sys
 
 import requests
 
 from oauth2client.client import GoogleCredentials
+
 credentials = GoogleCredentials.get_application_default()
 
 # Instantiates a client
@@ -17,12 +19,13 @@ def getSentiment(text=None, url=None):
 		    content=text,
 		    type=types.Document.Type.PLAIN_TEXT)
 		# Detects the sentiment of the text
-		sentiment = client.analyze_sentiment(document=document).document_sentiment
+		result = client.analyze_sentiment(document=document).document_sentiment
 	else:
 		html = requests.get(url)
 		document = types.Document(
 		    content=html.content,
 		    type="HTML")
-		sentiment = client.analyze_sentiment(document=document).document_sentiment
+		result = client.analyze_sentiment(document=document).document_sentiment
+	return (result.score, result.magnitude)
 
-	return(sentiment.score, sentiment.magnitude)
+

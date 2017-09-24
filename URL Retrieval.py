@@ -4,11 +4,12 @@ import random
 import glob
 from datetime import datetime, date, timedelta
 import time
-import SQL_Interface
+#import SQL_Interface
 from bs4 import BeautifulSoup
 
 #URL= 'https://www.google.com/search?q=bitcoin&tbs=cdr:1,cd_min:1/26/2017,cd_max:2/25/2017&tbm=nws&ei=UfXFWZC8EYLGjwTWyofoBA&start=00&sa=N&biw=1829&bih=899&dpr=1.75'
 URL= 'https://www.google.com/search?q=bitcoin&tbs=cdr:1,cd_min:{startdate},cd_max:{stopdate}&tbm=nws&ei=UfXFWZC8EYLGjwTWyofoBA&start={searchresultnumber}&sa=N&biw=1829&bih=899&dpr=1.75'
+print(URL.format(startdate='01/04/2015', stopdate='01/10/2015', searchresultnumber=0))
 #2010-07-18
 def prog():
     start_date = date(2012, 7, 1)
@@ -44,7 +45,7 @@ def parseFiles():
                     link = "www." + link
                 link = pre + link
                 print("".join(fileName.split('\\')[-1].split('.')[0].split('-')), link)
-                SQL_Interface.Execute("INSERT INTO WeeklyUrls (StartDate, URL) VALUES({startDate}, '{URL}')".format(startDate="".join(fileName.split('\\')[-1].split('.')[0].split('-')), URL=link))
+               # SQL_Interface.Execute("INSERT INTO WeeklyUrls (StartDate, URL) VALUES({startDate}, '{URL}')".format(startDate="".join(fileName.split('\\')[-1].split('.')[0].split('-')), URL=link))
                 link = fileRead.readline()
 
 #prog()

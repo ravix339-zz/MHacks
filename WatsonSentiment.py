@@ -25,7 +25,7 @@ natural_language_understanding = NaturalLanguageUnderstandingV1(
 	version=credentials['version'])
 
 def getSentiment(text=None, url=None):
-	if(url=None):
+	if(url==None):
 		response = natural_language_understanding.analyze(
 			text=text,
 			features=[
