@@ -29,6 +29,7 @@ def parseFiles():
     files = glob.glob("C:\\Users\\Ravi\\Desktop\\URLs\\*.txt")
     for fileName in files:
         with open(fileName,'r') as fileRead:
+
             link = fileRead.readline()
             while link != '':
                 link = link[:-1]
@@ -42,9 +43,9 @@ def parseFiles():
                 if link[:4] != "www.":
                     link = "www." + link
                 link = pre + link
-                print(fileName.split('\\')[-1].split('.')[0], link)
-                SQL_Interface.Execute("INSERT INTO WeeklyUrls (StartDate, URL) VALUES({startDate}, '{URL}')".format(startDate=fileName.split('\\')[-1].split('.')[0].spl, URL=link))
+                print("".join(fileName.split('\\')[-1].split('.')[0].split('-')), link)
+                SQL_Interface.Execute("INSERT INTO WeeklyUrls (StartDate, URL) VALUES({startDate}, '{URL}')".format(startDate="".join(fileName.split('\\')[-1].split('.')[0].split('-')), URL=link))
                 link = fileRead.readline()
 
-prog()
-#parseFiles()
+#prog()
+parseFiles()

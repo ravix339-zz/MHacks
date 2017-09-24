@@ -1,7 +1,6 @@
 import pyodbc
-#import Sentiment
-#import Aylien
-#import CloudTrain
+import Sentiment
+import Aylien
 
 connection = pyodbc.connect('Driver={ODBC Driver 13 for SQL Server};Server=tcp:mhacks.database.windows.net,1433;Database=mhacks;Uid=ajaykumar@mhacks;Pwd=ILoveAjay!;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;')
 def createWeeklyURLTable():
@@ -15,11 +14,6 @@ def Execute(query):
     cursor = connection.cursor()
     cursor.execute(query)
     cursor.commit()
-def Insert(startDate, URL):
-    print("INSERT INTO WeeklyUrls (StartDate, URL) VALUES({startDate}, '{URL}')".format(startDate=startDate, URL=URL))
-    #cursor = connection.cursor()
-    #cursor.execute("INSERT INTO WeeklyUrls (StartDate, URL) VALUES({startDate}, '{URL})'".format(startDate=startDate, URL=URL))
-    #cursor.commit()
 
 def SentimentalitySendAndReceive():
     cursor = connection.cursor()
