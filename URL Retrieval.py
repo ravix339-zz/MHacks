@@ -12,11 +12,11 @@ URL= 'https://www.google.com/search?q=bitcoin&tbs=cdr:1,cd_min:{startdate},cd_ma
 print(URL.format(startdate='01/04/2015', stopdate='01/10/2015', searchresultnumber=0))
 #2010-07-18
 def prog():
-    start_date = date(2012, 7, 1)
-    while start_date < date(2012, 12, 30):#datetime.now().date():
+    start_date = date(2014, 1, 5)
+    while start_date < date(2014, 12, 29):#datetime.now().date():
         print(start_date, min(start_date + timedelta(days=6), datetime.now().date()))
 
-        with open("C:\\Users\\Ravi\\Desktop\\URLs2\\" + str(start_date) + ".txt", 'w+') as file:
+        with open("D:\\Code\\Python\\URLs" + str(start_date) + ".txt", 'w+') as file:
             for page_number in range(3):
                 response = requests.get(URL.format(startdate=start_date.strftime("%m/%d/20%y"), stopdate=min(start_date + timedelta(days=6), datetime.now().date()).strftime("%m/%d/20%y"), searchresultnumber=str(page_number*10)))
                 time.sleep(30+random.random() * random.random()*100)
