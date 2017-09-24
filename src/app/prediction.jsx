@@ -26,7 +26,7 @@ class Prediction extends React.Component {
             x: this.context.data ? JSON.parse(this.context.data.weeks) : "2010-7-18",
             y: this.context.data ? JSON.parse(this.context.data.Prices) : 0,
             line: { color: '#7F7F7F' }
-        }
+        };
         let layout = { // all "layout" attributes: #layout
             title: 'simple example', // more about "layout.title": #layout-title
             xaxis: { // all "layout.xaxis" attributes: #layout-xaxis
@@ -36,8 +36,8 @@ class Prediction extends React.Component {
         let config = {
             showLink: false,
             displayModeBar: false
-        }
-        var plot = this.context.data ? <PlotlyComponent className="whatever" data={[predicted, actual]} layout={ layout } config={ config } /> : null
+        };
+        let plot = this.context.data ? <PlotlyComponent className="whatever" data={[predicted, actual]} layout={ layout } config={ config } /> : null
         return ( 
         	<div className = "plot" > { plot } </div>
         );

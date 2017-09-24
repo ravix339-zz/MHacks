@@ -8,27 +8,22 @@ def Execute(query):
     cursor.execute(query)
     cursor.commit()
 def LyndonShiAbandonedUs():
-    files = glob.glob("C:\\Users\\Ravi\\Desktop\\text\\*.txt")
+    files = glob.glob("D:\\Code\\Python\\Text\\*.txt")
     for fileName in files:
-        stuff = ["Bitcoin is amazing!!!! I love it!"]
         print(fileName)
-        with open(fileName,'r') as fileRead:
+        articles =[]
+        with open(fileName,'r', encoding='utf-8') as fileRead:
             try:
-                something = fileRead.readline()
-                stuff.append(something)
-            except:
+                articles = fileRead.read().split('\r\n\r\n\r\n\r\n\r\n')
+            except Exception as e:
+                print(e)
                 print("Fuck you")
-            while something:
-                try:
-                    something = fileRead.readline()
-                    stuff.append(something)
-                except Exception as e:
-                    print("Fuck you")
-        sentScore= GS.getSentiment(text=" ".join(stuff))
-        cursor = connection.cursor()
-        cursor.execute("UPDATE AnalyzedData SET Score = {score}, Mag = {mag} WHERE startdate = {startdate}".format(
-            startdate="".join(fileName.split('\\')[-1][:-4].split('-')), score=sentScore[0], mag=sentScore[1]))
-        cursor.commit()
+        for article in articles:
+            sentScore= GS.getSentiment(text=article)
+            cursor = connection.cursor()
+            cursor.execute("UPDATE AnalyzedData SET Score = {score}, Mag = {mag} WHERE startdate = {startdate}".format(
+                startdate="".join(fileName.split('\\')[-1][:-4].split('-')), score=sentScore[0], mag=sentScore[1]))
+            cursor.commit()
 
 LyndonShiAbandonedUs()
 
