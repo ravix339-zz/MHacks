@@ -10,22 +10,25 @@ class Prediction extends React.Component {
 	}
 
 	render() {
-		let data = [
-	      	{
-		        type: 'scatter',  // all "scatter" attributes: https://plot.ly/javascript/reference/#scatter
-		        x: [1, 2, 3],     // more about "x": #scatter-x
-		        y: [6, 2, 3],     // #scatter-y
-		        marker: {         // marker is an object, valid marker keys: #scatter-marker
-		          	color: 'rgb(16, 32, 77)' // more about "marker.color": #scatter-marker-color
-	        	}	
-	      	},
-	      	{
-		        type: 'bar',      // all "bar" chart attributes: #bar
-		        x: [1, 2, 3],     // more about "x": #bar-x
-		        y: [6, 2, 3],     // #bar-y
-		        name: 'bar chart example' // #bar-name
-		    }
-    	];
+        console.log(this.props);
+        let predicted = [
+          {
+            type: "scatter",
+            mode: "lines",
+            name: 'Predicted',
+            x: this.props.data.weeks,
+            y: this.props.data.Prices,
+            line: {color: '#17BECF'}
+          }
+        ];
+        let actual = {
+          type: "scatter",
+          mode: "lines",
+          name: 'Actual',
+          x: this.props.data.weeks,
+          y: this.props.data.Prices,
+          line: {color: '#7F7F7F'}
+        }
 	    let layout = {                     // all "layout" attributes: #layout
 	      	title: 'simple example',  // more about "layout.title": #layout-title
 	      	xaxis: {                  // all "layout.xaxis" attributes: #layout-xaxis
@@ -47,7 +50,7 @@ class Prediction extends React.Component {
 	    };
 		return (
 			<div className="plot">
-				<PlotlyComponent className="whatever" data={data} layout={layout} config={config}/>
+				<PlotlyComponent className="whatever" data={[predicted, actual]} layout={layout} config={config}/>
 			</div>
 		);
 	}

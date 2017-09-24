@@ -42,5 +42,9 @@
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
     "webpack": "^3.6.0"
+  },
+  "dependencies": {
+    "plotly": "^1.0.6",
+    "plotly.js": "^1.30.1"
   }
 }
