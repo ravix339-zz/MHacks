@@ -1,4 +1,5 @@
 from flask import Flask, render_template, send_from_directory, request
+import pyodbc
 import os
 import json
 app = Flask(__name__, static_folder='public')
@@ -7,9 +8,25 @@ __location__ = os.path.realpath(
 
 @app.route('/data',  methods=["GET"])
 def indexs():
-	return json.dumps({"weeks": json.dumps(["2015-02-25", "2015-03-04", "2015-03-05", "2015-03-21", "2015-03-29", "2015-04-06"]),
-			"Prices": json.dumps(["3.4","4.6","-3", "1.5", ".3", ".1"]),
-			"Sentiments": json.dumps(["9","12", "-2","16", "1", ".25"])
+	connection = pyodbc.connect('Driver={ODBC Driver 13 for SQL Server};Server=tcp:mhacks.database.windows.net,1433;Database=mhacks;Uid=ajaykumar@mhacks;Pwd=ILoveAjay!;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;')
+	cursor = connection.cursor()
+	cursor.execute("SELECT [startdate], [FinalPrice], [Delta], [Mag] FROM AnalyzedData")
+	weeks = []
+	prices =[]
+	delta=[]
+	sentiments=[]
+	row = cursor.fetchone()
+	while row:
+		weeks.append(row[0])
+		prices.append(row[1])
+		delta.append(row[2])
+		prices.append(row[3])
+		sentiments.append(row[4])
+		row = cursor.fetchone()
+	return json.dumps({"weeks": json.dumps(weeks),
+			"Prices": json.dumps(prices),
+			"Sentiments": json.dumps(sentiments),
+			"Delta": json.dumps(delta)
 			})
 def shutdown_server():
 	func = request.environ.get('werkzeug.server.shutdown')
