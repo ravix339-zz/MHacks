@@ -5,6 +5,9 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var cssOutputPath =  './static/app.[hash].css'
 var jsOutputPath = './static/app.[hash].js'
 var ExtractSASS = new ExtractTextPlugin(cssOutputPath);
+require("babel-core").transform("code", {
+  plugins: ["transform-class-properties"]
+});
 
 
 module.exports = {

@@ -7,27 +7,32 @@ title {
 #content {
     width: 80%;
     height: 100%;
+    margin: 0 auto;
 }
 
 ul {
     list-style-type: none;
     margin: 0 auto;
     padding: 0;
+    margin-bottom: 15px;
     width: 30%;
     opacity: 0.85;
     border-radius: 4px;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px, rgba(0, 0, 0, 0.15) 0px 8px 16px;
     overflow: hidden;
+    height: 5%;
 }
 
 li {
     float: left;
     border-right: 1px solid #F0F0F0;
     width: 33%;
+    height: 100%;
     background-color: rgba(55, 58, 64, 0.85);
     transition-property: background-color;
     transition-duration: 0.25s;
     transition-timing-function: linear;
+    text-align: center;
 }
 
 li:last-child {
@@ -48,4 +53,8 @@ li:hover {
 
 a.active {
     background-color: rgba(255, 255, 255, 0.2);
+}
+
+#slider-container {
+    margin: 30px 10px 50px 10px;
 }

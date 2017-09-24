@@ -7,7 +7,7 @@ __location__ = os.path.realpath(
 
 @app.route('/data',  methods=["GET"])
 def indexs():
-	return json.dumps({"weeks": json.dumps(["2015-04-06","2015-03-29", "2015-03-21","2015-02-25" "2015-03-04", "2015-03-05"]),
+	return json.dumps({"weeks": json.dumps(["2015-02-25", "2015-03-04", "2015-03-05", "2015-03-21", "2015-03-29", "2015-04-06"]),
 			"Prices": json.dumps(["3.4","4.6","-3", "1.5", ".3", ".1"]),
 			"Sentiments": json.dumps(["9","12", "-2","16", "1", ".25"])
 			})
