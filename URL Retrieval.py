@@ -11,11 +11,11 @@ from bs4 import BeautifulSoup
 URL= 'https://www.google.com/search?q=bitcoin&tbs=cdr:1,cd_min:{startdate},cd_max:{stopdate}&tbm=nws&ei=UfXFWZC8EYLGjwTWyofoBA&start={searchresultnumber}&sa=N&biw=1829&bih=899&dpr=1.75'
 #2010-07-18
 def prog():
-    start_date = date(2015, 7, 3)
-    while start_date < date(2015, 11, 15):#datetime.now().date():
+    start_date = date(2012, 7, 1)
+    while start_date < date(2012, 12, 30):#datetime.now().date():
         print(start_date, min(start_date + timedelta(days=6), datetime.now().date()))
 
-        with open("C:\\Users\\Ravi\\Desktop\\URLs\\" + str(start_date) + ".txt", 'w+') as file:
+        with open("C:\\Users\\Ravi\\Desktop\\URLs2\\" + str(start_date) + ".txt", 'w+') as file:
             for page_number in range(3):
                 response = requests.get(URL.format(startdate=start_date.strftime("%m/%d/20%y"), stopdate=min(start_date + timedelta(days=6), datetime.now().date()).strftime("%m/%d/20%y"), searchresultnumber=str(page_number*10)))
                 time.sleep(30+random.random() * random.random()*100)
@@ -46,5 +46,5 @@ def parseFiles():
                 SQL_Interface.Execute("INSERT INTO WeeklyUrls (StartDate, URL) VALUES({startDate}, '{URL}')".format(startDate=fileName.split('\\')[-1].split('.')[0].spl, URL=link))
                 link = fileRead.readline()
 
-#prog()
-parseFiles()
+prog()
+#parseFiles()
