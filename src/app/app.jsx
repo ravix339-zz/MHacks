@@ -8,7 +8,7 @@ class App extends React.Component {
 		this.state = {
 			sVal: 0,
 			data: null
-		}	
+		}
 	}
 
 	componentDidMount() {
@@ -17,6 +17,8 @@ class App extends React.Component {
 		}).then(function(res) {
 			try {
        			const data = res.json();
+                console.log(data);
+                return data;
         	// Do your JSON handling here
     		} catch(err) {
         	// It is text, do you text handling here
@@ -32,9 +34,10 @@ class App extends React.Component {
 
 
 	render() {
-		var children = React.Children.map(this.props.children, (child) => {
+		var children = React.Children.map(this.props.children, child => {
     		return React.cloneElement(child, {
-      			sVal: this.state.sVal
+      			sVal: this.state.sVal,
+                data: this.state.data
     		})
   		})
 		return (
